@@ -48,7 +48,7 @@
                                 <!-- To make this form functional, sign up at-->
                                 <!-- https://startbootstrap.com/solution/contact-forms-->
                                 <!-- to get an API token!-->
-                                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="post">
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
@@ -94,6 +94,14 @@
                                     <!-- Submit Button-->
                                     <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Envoyer</button></div>
                                 </form>
+
+                                <?php 
+                                if (isset($_POST['message'])){
+                                    $retour = mail('pourlefun022021@gmail.com', 'Envoi depuis la page Contact',$_POST['phone'] $_POST['message'], 'From: webmaster@monsite.fr' . "\r\n" . 'Reply-to: ' . $_POST['email']);
+                                    if($retour)
+                                        echo '<p>Votre message a bien été envoyé.</p>';
+    }
+    ?>
                             </div>
                         </div>
                     </div>
