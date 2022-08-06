@@ -5,6 +5,7 @@
     <title>Envoi d'un message par formulaire</title>
 </head>
 
+<h1>OK!</h1>
 <body>    
 
 
